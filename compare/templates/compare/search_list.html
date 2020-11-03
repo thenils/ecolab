@@ -1,0 +1,24 @@
+{% extends 'home/base.html' %}
+{% block content %}
+
+	{% for item in items %}
+			<ul>
+				<li><a href="{% url 'detail-item' item.id %}">{{ item.product_name}}</a></li>
+			</ul>
+		{% endfor %}
+ 	<!-- {% if items %}
+ 		<div>
+ 			<center><h1>We found something</h1></center><br>
+ 		</div>
+ 		
+		{% for item in items %}
+			<ul>
+				<li><a href="{% url 'detail-item' item.id %}">{{ item.product_name}}</a></li>
+			</ul>
+		{% endfor %}
+			{% else %}
+			<div>
+ 				<center><h1>Not found anything</h1></center><br>
+ 			</div>
+ 	{% endif %} -->
+{% endblock %}

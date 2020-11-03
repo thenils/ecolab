@@ -1,6 +1,14 @@
 
 {% extends 'home/base.html' %}
 {% block content %}
+	<div>
+		<form role="search" action="{% url 'search'%}" method="get">
+			<div>
+				<input type="text" name="search" placeholder="search">
+			</div>
+			<button type="submit">Search</button>
+		</form>
+	</div>
 	<h2>List of Item</h2>
 	<div>
 		{% for item in items %}

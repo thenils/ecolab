@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 from .models import Item
 from django.urls import reverse, reverse_lazy
 from django.views.generic import ListView, CreateView, UpdateView, DetailView, DeleteView
+# from django
 
 #only required if u use get or post method to update quary
 from .form import itemForm
@@ -61,7 +62,15 @@ class ItemUpdateView(UpdateView):
 	# 	return redirect(self.success_url)
 
 
+#searchbar
 
-		
+def search(request):
+	if request.method == 'GET':
+		search = request.GET.get('search')
+		item = Item.objects.all().filter(product='search')
+		ctx = {
+		'items':item
+		}
+		return render(request, 'compare/search_list.html', ctx)
 
 
