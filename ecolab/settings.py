@@ -35,6 +35,7 @@ INSTALLED_APPS = [
     #installed app
     'home',
     'compare',
+    'crispy_forms',
 
     'django.contrib.admin',
     'django.contrib.auth',

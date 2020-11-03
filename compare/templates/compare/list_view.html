@@ -1,12 +1,13 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Compare</title>
-</head>
-<body>
+
+{% extends 'home/base.html' %}
+{% block content %}
 	<h2>List of Item</h2>
-	{% for item in items %}
-		<a href="#">{{ item.product_name}}</a>
-	{% endfor %}
-</body>
-</html>
+	<div>
+		{% for item in items %}
+			<ul>
+				<li><a href="{% url 'detail-item' item.id %}">{{ item.product_name}}</a></li>
+			</ul>
+		{% endfor %}
+	</div>
+	<a href="{% url 'new-item' %}">Create New Item</a>
+{% endblock %}
