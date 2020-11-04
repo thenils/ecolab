@@ -15,13 +15,13 @@
 
 	<div><form method="get" action="{% url 'compare' %}">
 		<label for="items">Select a product name:</label>
-		<select  type="search" id="item_1" name = 'item_1' form="itemform">
+		<select  type="search" id="item_1" name = 'item_1' >
   			{% for item in items %}
   				<option>{{ item.product_name }}</option>
   			{% endfor %}
 		</select>
 		<label for="items">Select another product name:</label>
-		<select type="search" name="item_2" id="item_2" form="itemform">
+		<select type="search" name="item_2" id="item_2" >
   			{% for item in items %}
   				<option>{{ item.product_name }}</option>
   			{% endfor %}

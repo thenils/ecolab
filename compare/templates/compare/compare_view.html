@@ -2,6 +2,57 @@
 {% block content %}
 
 
+		
+	<!-- <h2>{{ item1 }}</h2>
+	<h2>{{ item2 }}</h2> -->
+
+
+	<table width="100%" border="1">
+
+		<tr bgcolor="#eeffcc">
+			<th>Product Name</th>
+			<th>Product Categery</th>
+			<th>Label</th>
+			<th>Product Price</th>
+		</tr>
+		{% for item in item1 %}
+		<tr bgcolor="#ccf2ff" border="none">
+			<td>{{ item.product_name }}</td>
+			<td>{{ item.product }}</td>
+			<td>{{ item.label }}</td>
+			<td>{{ item.product_price }}</td>
+		</tr>
+		{% endfor %}
+		{% for item in item2 %}
+		<tr bgcolor="#ffccff">
+			<td>{{ item.product_name }}</td>
+			<td>{{ item.product }}</td>
+			<td>{{ item.label }}</td>
+			<td>{{ item.product_price }}</td>
+		</tr>
+		{% endfor %}
+
+		
+	</table>
+		<!-- {% for item in item1 %}
+			<ul>
+				<li>{{ item.product_name}}</li>
+				<li>{{ item.product}}</li>
+				<li>{{ item.label}}</li>
+				<li>{{ item.product_price}}</li>
+			</ul>
+		{% endfor %}
+
+		{% for item in item2 %}
+			<ul>
+				<li>{{ item.product_name}}</li>
+				<li>{{ item.product}}</li>
+				<li>{{ item.label}}</li>
+				<li>{{ item.product_price}}</li>
+			</ul>
+		{% endfor %} -->
+		
+
 
 
 <!-- <table width="100%" border="1px" cellpadding="20">
