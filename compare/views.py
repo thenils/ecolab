@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect, get_object_or_404
+from django.shortcuts import render, redirect, get_object_or_404, HttpResponse
 from .models import Item
 from django.urls import reverse, reverse_lazy
 from django.views.generic import ListView, CreateView, UpdateView, DetailView, DeleteView
@@ -65,12 +65,12 @@ class ItemUpdateView(UpdateView):
 #searchbar
 
 def search(request):
-	if request.method == 'GET':
-		search = request.GET.get('search')
-		item = Item.objects.all().filter(product='search')
-		ctx = {
-		'items':item
-		}
-		return render(request, 'compare/search_list.html', ctx)
+	query = request.GET['query']
+	# items = Item.objects.filter(product__icontains=query)
+	ctx = {
+	'items' : Item.objects.filter(product_name__icontains=query)
+	}
 
+	return render(request, 'compare/search_list.html', ctx)
+	
 
