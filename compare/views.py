@@ -74,3 +74,11 @@ def search(request):
 	return render(request, 'compare/search_list.html', ctx)
 	
 
+def CompareView(request):
+	item_1 = request.GET['item_1']
+	item_2 = request.GET['item_2']
+	ctx = {
+	'item1' : Item.objects.filter(product_name__icontains=item_1),
+	'item2' : Item.objects.filter(product_name__icontains=item_2)
+	}
+	return render(request, 'compare/compare_view.html', ctx)

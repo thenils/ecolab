@@ -8,6 +8,7 @@ urlpatterns = [
     path('item/<int:pk>/update', ItemUpdateView.as_view(), name='update-item'),
     path('item/<int:pk>/',ItemDetailView.as_view(),name='detail-item'),
     path('item/<int:pk>/delete/', DeleteItem.as_view(), name='delete-item'),
-    path('item/search/', views.search, name='search')
+    path('item/search/', views.search, name='search'),
+    path('item/compare/', views.CompareView, name='compare')
     # path('', include('compare.urls'))
 ]
